@@ -15,7 +15,7 @@ namespace WebAPILab29
             config.MapHttpAttributeRoutes();
 
             //TODO: take out before submiting
-            config.Formatters.Remove(config.Formatters.XmlFormatter);
+            //config.Formatters.Remove(config.Formatters.XmlFormatter);
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
