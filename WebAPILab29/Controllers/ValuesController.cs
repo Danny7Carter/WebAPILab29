@@ -63,18 +63,20 @@ namespace WebAPILab29.Controllers
             return LeadActor;
         }
 
-        public List<MovieList> GetRandomMovie()
+        public MovieList GetRandomMovie()
         {
             Random rndm = new Random();
             MovieEntities db = new MovieEntities();
             List<MovieList> RandomPick = db.MovieLists.ToList();
+            
             int MovieList = RandomPick.Count() + 1;
             int RandomPicks = rndm.Next(0, MovieList);
+            MovieList ml = RandomPick[RandomPicks];
 
-            return RandomPick;
+            return ml;
         }
 
-        public List<MovieList> RandomGenre(string rndgenre)
+        public List<MovieList> GetRandomGenre(string rndgenre)
         {
             Random rndm = new Random();
             MovieEntities db = new MovieEntities();
